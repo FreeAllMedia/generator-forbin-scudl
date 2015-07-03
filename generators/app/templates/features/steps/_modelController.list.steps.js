@@ -1,7 +1,7 @@
 /* eslint-disable new-cap */
 const <%= name %>Fixtures = require("../../../spec/fixtures/<%= name %>s.json");
 
-import Request from "../../../services/request/request.js";
+import Request from "appeal";
 
 export default function <%= Name %>ControllerListSteps () {
 	this.When(/^a valid list <%= name %> request is received$/, function (callback) {
