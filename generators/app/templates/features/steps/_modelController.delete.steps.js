@@ -22,7 +22,7 @@ export default function <%= Name %>ControllerListSteps () {
 			]
 		});
 
-		this.deleteQuerySpy = this.database.spy(/update `<%= _name %>s` set `deleted_at` = '[0-9\:\- \.]*' where `id` = 1/, 1);
+		this.querySpy = this.database.spy(/update `<%= _name %>s` set `deleted_at` = '[0-9\:\- \.]*' where `id` = 1/, 1);
 
 		Request
 			.delete

@@ -39,4 +39,10 @@ describe("forbin-scudl", () => {
       `app/controllers/${name}Controller.js`
     ]);
   });
+
+  describe("(about the content of every feature)", () => {
+    it("should have some this.querySpy = on it", () => {
+      assert.fileContent([[`features/steps/${name}/${name}Controller.show.steps.js`, "this.querySpy ="]]);
+    });
+  });
 });

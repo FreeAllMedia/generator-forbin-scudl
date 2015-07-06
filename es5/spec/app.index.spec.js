@@ -26,4 +26,10 @@ describe("forbin-scudl", function () {
   it("creates the controller", function () {
     assert.file(["app/controllers/" + name + "Controller.js"]);
   });
+
+  describe("(about the content of every feature)", function () {
+    it("should have some this.querySpy = on it", function () {
+      assert.fileContent([["features/steps/" + name + "/" + name + "Controller.show.steps.js", "this.querySpy ="]]);
+    });
+  });
 });

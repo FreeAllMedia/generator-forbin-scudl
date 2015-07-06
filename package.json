@@ -34,9 +34,7 @@
   },
   "homepage": "https://github.com/FreeAllMedia/generator-forbin-scudl",
   "dependencies": {
-    "babel-eslint": "^3.1.23",
     "chalk": "^1.1.0",
-    "eslint": "^0.24.0",
     "jargon": "^0.1.14",
     "yeoman-generator": "^0.20.1",
     "yo": "^1.4.7",

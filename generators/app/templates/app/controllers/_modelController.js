@@ -27,15 +27,7 @@ export default class <%= Name %>Controller extends ApplicationController {
 		} else {
 			let new<%= Name %> = new <%= Name %>({
 				contentPackageId: request.body.data.contentPackageId,
-				name: request.body.data.name,
-				type: request.body.data.type,
-				creatorName: request.body.data.creatorName,
-				collectionName: request.body.data.collectionName,
-				categoryName: request.body.data.categoryName,
-				mimeType: request.body.data.mimeType,
-				priceInCredits: request.body.data.priceInCredits,
-				description: request.body.data.description,
-				copyright: request.body.data.copyright
+				name: request.body.data.name
 			});
 
 			new<%= Name %>.save((saveError) => {
@@ -63,14 +55,6 @@ export default class <%= Name %>Controller extends ApplicationController {
 				} else {
 					<%= name %>.contentPackageId = request.body.data.contentPackageId;
 					<%= name %>.name = request.body.data.name;
-					<%= name %>.type = request.body.data.type;
-					<%= name %>.creatorName = request.body.data.creatorName;
-					<%= name %>.collectionName = request.body.data.collectionName;
-					<%= name %>.categoryName = request.body.data.categoryName;
-					<%= name %>.mimeType = request.body.data.mimeType;
-					<%= name %>.priceInCredits = request.body.data.priceInCredits;
-					<%= name %>.description = request.body.data.description;
-					<%= name %>.copyright = request.body.data.copyright;
 
 					<%= name %>.save((saveError) => {
 						if(saveError) {

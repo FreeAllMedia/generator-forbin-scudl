@@ -6,7 +6,6 @@ import Request from "appeal";
 export default function <%= Name %>ControllerUpdateSteps () {
 	this.When(/^a valid update <%= name %> request is received$/, function (callback) {
 		this.database.mock({
-			//TODO ADD MOCKS WITH ATTRIBUTES
 			"select * from `<%= _name %>s` where `id` = '2' and `deleted_at` is null limit 1": [
 			],
 			"select * from `<%= _name %>s` where `id` = '1' and `deleted_at` is null limit 1": [
@@ -29,6 +28,9 @@ export default function <%= Name %>ControllerUpdateSteps () {
 		if(this.<%= name %>.name) {
 			this.<%= name %>.name = "newName";
 		}
+
+		//TODO ADD MOCKS WITH ATTRIBUTES
+		this.querySpy = this.database.spy(/update `<%= _name %>s` set `title` = 'newName', `updated_at` = '[0-9\:\- \.]*' where `id` = 1/, [1]);
 
 		Request
 			.put

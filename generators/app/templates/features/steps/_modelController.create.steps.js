@@ -6,7 +6,6 @@ import Request from "appeal";
 export default function <%= Name %>ControllerShowSteps () {
 	this.When(/^a valid create <%= name %> request is received$/, function (callback) {
 		this.database.mock({
-			//TODO ADD MOCKS WITH ATTRIBUTES
 			"select * from `client_access_tokens` where `token` = 'valid-client-access-token' and `deleted_at` is null limit 1": [
 				this.clientAccessTokenRecord
 			],
@@ -16,6 +15,10 @@ export default function <%= Name %>ControllerShowSteps () {
 				this.clientAccessTokenRecord
 			]
 		});
+
+		//TODO: ADD ATTRIBUTES
+		//new RegExp(`insert into `<%= names %>` \(`created_at`, `title`\) values \('[0-9\:\- \.]*', '${<%= name %>Fixtures[0].title}'\)`)
+		this.querySpy = this.database.spy(/insert into `<%= _name %>s` \(`created_at`, `title`\) values \('[0-9\:\- \.]*', ''\)/, [12]);
 
 		Request
 			.post

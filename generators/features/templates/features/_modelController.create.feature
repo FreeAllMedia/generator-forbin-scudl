@@ -12,6 +12,7 @@ Feature: Create a new <%= name %>
 		When a valid create <%= name %> request is received
 		Then respond with the newly created <%= name %>'s details
 			And http status code "created"
+			And the "insert" query was executed
 
 	Scenario: client access token is valid and authorized, but <%= name %> attributes are not valid
 		Given client access token is valid
@@ -20,7 +21,7 @@ Feature: Create a new <%= name %>
 		When a valid create <%= name %> request is received
 		Then respond with error message title, "<%= Name %> is invalid"
 			And http status code "conflict"
-		
+
 	# Scenario: client access token is valid, but unauthorized
 
 	Scenario: client access token is invalid, return error
