@@ -3,7 +3,7 @@ const assert = require("yeoman-generator").assert;
 const helpers = require("yeoman-generator").test;
 const os = require("os");
 
-describe("scudl:controller", () => {
+describe("forbin-scudl", () => {
   let name;
 
   before((done) => {
@@ -25,16 +25,6 @@ describe("scudl:controller", () => {
       `features/steps/${name}/${name}Controller.update.steps.js`,
       `features/steps/${name}/${name}Controller.delete.steps.js`,
       `features/steps/${name}/${name}Controller.list.steps.js`
-    ]);
-  });
-
-  it("creates feature files", () => {
-    assert.file([
-      `features/${name}/${name}Controller.show.feature`,
-      `features/${name}/${name}Controller.create.feature`,
-      `features/${name}/${name}Controller.update.feature`,
-      `features/${name}/${name}Controller.delete.feature`,
-      `features/${name}/${name}Controller.list.feature`
     ]);
   });
 
