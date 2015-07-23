@@ -33,11 +33,11 @@ module.exports = yeoman.generators.Base.extend({
 		};
 
 		//copy features
-		["_modelController.show.feature",
-		"_modelController.create.feature",
-		"_modelController.update.feature",
-		"_modelController.delete.feature",
-		"_modelController.list.feature"]
+		["_model.show.feature",
+		"_model.create.feature",
+		"_model.update.feature",
+		"_model.delete.feature",
+		"_model.list.feature"]
 		.forEach((templatePath) => {
 			let newName = templatePath.replace("_model", `${context.name}`);
 			this.fs.copyTpl(

@@ -19,11 +19,11 @@ describe("forbin-scudl:features", () => {
 
   it("creates feature files", () => {
     assert.file([
-      `features/${name}/${name}Controller.show.feature`,
-      `features/${name}/${name}Controller.create.feature`,
-      `features/${name}/${name}Controller.update.feature`,
-      `features/${name}/${name}Controller.delete.feature`,
-      `features/${name}/${name}Controller.list.feature`
+      `features/${name}/${name}.show.feature`,
+      `features/${name}/${name}.create.feature`,
+      `features/${name}/${name}.update.feature`,
+      `features/${name}/${name}.delete.feature`,
+      `features/${name}/${name}.list.feature`
     ]);
   });
 });
