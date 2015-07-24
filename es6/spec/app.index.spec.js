@@ -19,12 +19,12 @@ describe("forbin-scudl", () => {
 
   it("creates step files", () => {
     assert.file([
-      `features/steps/${name}/${name}Controller.common.steps.js`,
-      `features/steps/${name}/${name}Controller.show.steps.js`,
-      `features/steps/${name}/${name}Controller.create.steps.js`,
-      `features/steps/${name}/${name}Controller.update.steps.js`,
-      `features/steps/${name}/${name}Controller.delete.steps.js`,
-      `features/steps/${name}/${name}Controller.list.steps.js`
+      `features/steps/${name}/${name}.common.steps.js`,
+      `features/steps/${name}/${name}.show.steps.js`,
+      `features/steps/${name}/${name}.create.steps.js`,
+      `features/steps/${name}/${name}.update.steps.js`,
+      `features/steps/${name}/${name}.delete.steps.js`,
+      `features/steps/${name}/${name}.list.steps.js`
     ]);
   });
 
@@ -42,7 +42,7 @@ describe("forbin-scudl", () => {
 
   describe("(about the content of every feature)", () => {
     it("should have some this.querySpy = on it", () => {
-      assert.fileContent([[`features/steps/${name}/${name}Controller.show.steps.js`, "this.querySpy ="]]);
+      assert.fileContent([[`features/steps/${name}/${name}.show.steps.js`, "this.querySpy ="]]);
     });
   });
 });

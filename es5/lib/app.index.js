@@ -46,7 +46,7 @@ module.exports = yeoman.generators.Base.extend({
 		};
 
 		//copy feature steps
-		["_modelController.common.steps.js", "_modelController.show.steps.js", "_modelController.create.steps.js", "_modelController.update.steps.js", "_modelController.delete.steps.js", "_modelController.list.steps.js"].forEach(function (templatePath) {
+		["_model.common.steps.js", "_model.show.steps.js", "_model.create.steps.js", "_model.update.steps.js", "_model.delete.steps.js", "_model.list.steps.js"].forEach(function (templatePath) {
 			var newName = templatePath.replace("_model", "" + context.name);
 			_this.fs.copyTpl(_this.templatePath("features/steps/" + templatePath), _this.destinationPath("features/steps/" + context.name + "/" + newName), context);
 		}, this);
