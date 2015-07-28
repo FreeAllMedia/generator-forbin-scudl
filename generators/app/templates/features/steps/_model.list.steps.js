@@ -1,18 +1,11 @@
 /* eslint-disable new-cap */
 const <%= name %>Fixtures = require("../../../spec/fixtures/<%= name %>s.json");
 
-import Request from "../../../services/request/request.js";
+import Request from "appeal";
 
 export default function <%= Name %>ControllerListSteps () {
 	this.When(/^a valid list <%= name %> request is received$/, function (callback) {
 		this.database.mock({
-			"select * from `<%= _name %>s`": [
-				<%= name %>Fixtures[0],
-				<%= name %>Fixtures[2],
-				<%= name %>Fixtures[3],
-				<%= name %>Fixtures[4],
-				<%= name %>Fixtures[5]
-			],
 			"select * from `client_access_tokens` where `token` = 'valid-client-access-token' and `deleted_at` is null limit 1": [
 				this.clientAccessTokenRecord
 			],
@@ -22,6 +15,14 @@ export default function <%= Name %>ControllerListSteps () {
 				this.clientAccessTokenRecord
 			]
 		});
+
+		this.querySpy = this.database.spy("select * from `<%= _name %>s`", [
+			<%= name %>Fixtures[0],
+			<%= name %>Fixtures[2],
+			<%= name %>Fixtures[3],
+			<%= name %>Fixtures[4],
+			<%= name %>Fixtures[5]
+		]);
 
 		Request
 			.get
