@@ -44,5 +44,15 @@ describe("forbin-scudl", () => {
     it("should have some this.querySpy = on it", () => {
       assert.fileContent([[`features/steps/${name}/${name}.show.steps.js`, "this.querySpy ="]]);
     });
+
+    describe("(controller content)", () => {
+        it("should have filters for validation", () => {
+            assert.fileContent([
+                    [`app/controllers/${name}Controller.js`, "filters()"],
+                    [`app/controllers/${name}Controller.js`, "[validateId]"],
+                    [`app/controllers/${name}Controller.js`, "[validateData]"]
+                ]);
+        });
+    });
   });
 });
