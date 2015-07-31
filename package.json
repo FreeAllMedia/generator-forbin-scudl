@@ -1,6 +1,6 @@
 {
   "name": "generator-forbin-scudl",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ES6 yeoman generator for forbin controllers.",
   "main": "index.js",
   "scripts": {
