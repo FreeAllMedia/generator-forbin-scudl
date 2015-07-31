@@ -13,7 +13,7 @@ gulp.task("suppress-errors", function(){
         var originalPipe = o.pipe;
         var newPipe = function(){
             var result = originalPipe.apply(this, arguments);
-
+            result.setMaxListeners(0);
             if(!result.pipe["monkey patched for suppress-errors"]){
                 monkeyPatchPipe(result);
             }

@@ -1,6 +1,6 @@
 {
   "name": "generator-forbin-scudl",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ES6 yeoman generator for forbin controllers.",
   "main": "index.js",
   "scripts": {
@@ -49,7 +49,7 @@
     "gulp": "^3.9.0",
     "gulp-babel": "^5.1.0",
     "gulp-istanbul": "^0.10.0",
-    "gulp-mocha": "^2.1.1",
+    "gulp-spawn-mocha": "^2.2.1",
     "gulp-util": "^3.0.6",
     "karma": "^0.12.36",
     "karma-browserify": "^4.2.1",
