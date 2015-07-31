@@ -14,12 +14,14 @@ export default function <%= Name %>ControllerShowSteps () {
 			"select * from `client_access_tokens` where `token` = 'expired-client-access-token' and `deleted_at` is null limit 1": [
 				this.clientAccessTokenRecord
 			],
-			"select * from `<%= _name %>s` where `id` = '1' and `deleted_at` is null limit 1": [
-				<%= name %>Fixtures[0]
-			],
 			"select * from `<%= _name %>s` where `id` = '2' and `deleted_at` is null limit 1": [
 			]
 		});
+
+		this.querySpy = this.database.spy("select * from `<%= _name %>s` where `id` = '1' and `deleted_at` is null limit 1", [
+			<%= name %>Fixtures[0]
+		]);
+
 		Request
 			.get
 			.url(this.url + "/<%= name %>/" + this.<%= name %>Id)

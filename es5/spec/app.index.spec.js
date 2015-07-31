@@ -5,7 +5,7 @@ var assert = require("yeoman-generator").assert;
 var helpers = require("yeoman-generator").test;
 var os = require("os");
 
-describe("scudl:controller", function () {
+describe("forbin-scudl", function () {
   var name = undefined;
 
   before(function (done) {
@@ -16,11 +16,7 @@ describe("scudl:controller", function () {
   });
 
   it("creates step files", function () {
-    assert.file(["features/steps/" + name + "/" + name + "Controller.common.steps.js", "features/steps/" + name + "/" + name + "Controller.show.steps.js", "features/steps/" + name + "/" + name + "Controller.create.steps.js", "features/steps/" + name + "/" + name + "Controller.update.steps.js", "features/steps/" + name + "/" + name + "Controller.delete.steps.js", "features/steps/" + name + "/" + name + "Controller.list.steps.js"]);
-  });
-
-  it("creates feature files", function () {
-    assert.file(["features/" + name + "/" + name + "Controller.show.feature", "features/" + name + "/" + name + "Controller.create.feature", "features/" + name + "/" + name + "Controller.update.feature", "features/" + name + "/" + name + "Controller.delete.feature", "features/" + name + "/" + name + "Controller.list.feature"]);
+    assert.file(["features/steps/" + name + "/" + name + ".common.steps.js", "features/steps/" + name + "/" + name + ".show.steps.js", "features/steps/" + name + "/" + name + ".create.steps.js", "features/steps/" + name + "/" + name + ".update.steps.js", "features/steps/" + name + "/" + name + ".delete.steps.js", "features/steps/" + name + "/" + name + ".list.steps.js"]);
   });
 
   it("creates the fixture file", function () {
@@ -29,5 +25,17 @@ describe("scudl:controller", function () {
 
   it("creates the controller", function () {
     assert.file(["app/controllers/" + name + "Controller.js"]);
+  });
+
+  describe("(about the content of every feature)", function () {
+    it("should have some this.querySpy = on it", function () {
+      assert.fileContent([["features/steps/" + name + "/" + name + ".show.steps.js", "this.querySpy ="]]);
+    });
+
+    describe("(controller content)", function () {
+      it("should have filters for validation", function () {
+        assert.fileContent([["app/controllers/" + name + "Controller.js", "filters()"], ["app/controllers/" + name + "Controller.js", "[validateId]"], ["app/controllers/" + name + "Controller.js", "[validateData]"]]);
+      });
+    });
   });
 });

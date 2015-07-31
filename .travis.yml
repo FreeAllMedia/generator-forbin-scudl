@@ -1,17 +1,19 @@
 language: node_js
 node_js:
-  - '0.12'
-  - '0.11'
-  - '0.10'
-  - iojs-v1
-  - iojs-v2
+- '0.12'
+- '0.11'
+- iojs-v1
+- iojs-v2
 script: npm test
 before_script:
-  - npm install
+- npm install
 after_success:
-  - ./node_modules/coveralls/bin/coveralls.js < ./lcov.info
+- ./node_modules/coveralls/bin/coveralls.js < ./lcov.info
 deploy:
   provider: npm
   email: fam-operations@freeallmedia.com
   api_key:
-    - secure: e58Wp2dAfeZ4T3O/BpUs11Tlu8PkEIqnak4JjPqyFOQ0DNS38WpNzuDgsF4COS/p71jU92hPUVXBnAgvcAZFRg7XJ2ZT1/HH8/ZBx8FPeKwYWSuNYGf20wp62L9au9V3ROyKeHyvse6uYDDzipfPgIywKY4/ZszCzAoypXNBmVaMx2cl6cNJJHP3djU/wqIbkwD5cY238I+scZZBwjjh7trstWLgzT+TXU1pj46ydPcizm+XQS/7yL/l+Pu2nNYD7LwtuF5iP7ZOPdFCDBXSNj0c6tLDP6pWvlJ6nRfms3MEh4yNka5w7iGcAuKIbDUWl7KIAFk+6zSzxHL+YaQ6hxViqM+p1DxpLw01IgGbDfarOYXatIeyVTXTl27HUrpokbSebYytzFsVfeC27nq0j5vN8xtZgrX84DN2aWb+xGZZNu5LCVZ9FK4txT7Younv2Atxoe91dadwH+gxUd+Kd5Y3vzKskR0AYUzSaEuJLO0MyWyx5WAI+tgN5j2KQ2H7SAzsTVknCnmAAF3P6AxcFYtTwUr4cTgm2YV33bXmNoH0sb7HboNpgn1wVQJjlhBDswyAgqiL4U+rMwTZ/kOxLhaXrtFfwtzeBQDRz+5RqLPLn+5bzPrrbe7tphMPnXNIEttd76qf323i6Cz26l46EFbrrBB7tBfzWEYsLRcTNSU=
+    secure: FlR0JEINalLqrGdN7uECPp3Qpmrpt2Bmrf6ognWjwsu9LVUkq/k8CtmucgEFrta3tvZnU0vq7Z3NOJwDZPKdpTLnO0+NsMOa/LeZIg3YoA9N8C8/Gg8w7XNWkMZLXeAtuuyS/Y3JH5QLlcXxIs904ouBZ0fvc7oquDeIwlUmiOmdGo2ekHWKeRsg5kQHKXA/JdItlwFv4lSL8c0BKgurkiyC67+baJGBp+5cIKPabypXSKD7ItHhWXpJxrBNUqCJ9MHfwLsfiux9S5Fe47H92ISunsFdmHosuF1Awe2cHZXQxMeKj5k4VZGTh8EJEPloYe6q5AXSgGFwY/UL65NAMwemM2H6AlQZTIxmLlKGlT7Foh1iiiAxqXMWNnVZPxUR7R01cGSkJs/+Lv7Wv6OCO/BiCcuPqRGddlEsL9eGuDpuMjniLFqMeRBycZZnEiM6yXKEsJlzAlDLLsbPoUVLKP/qkiCLBpzi6TtP44bKaQ4WAF/LldHDEnfvPbPaaBkJtunVdM/2ie1BdAIa4cQweyGt8BAqxOp5PxA+2qTc99JMw1c0vuxqF56BmT2dwDSJi+/iGskd9vVG7pnlrk/oxlM0T0bK+tmJYcZgkFwZAwzLZFLVZM2YxaoglzUphUe7s28KZ9QFthF7C+aqcQWhpJz06j4OZbKyXf+D7fQT5BM=
+  on:
+    repo: FreeAllMedia/generator-forbin-scudl
+    branch: master

@@ -8,6 +8,8 @@ Feature: List all <%= name %> details
 		When a valid list <%= name %> request is received
 		Then respond with all the list of <%= name %>s
 			And http status code "ok"
+			And the "select all" query was executed
+
 	# Scenario: client access token is valid, but unauthorized
 
 	Scenario: client access token is invalid
